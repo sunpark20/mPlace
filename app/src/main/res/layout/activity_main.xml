@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <Button
+        android:id="@+id/day0"
+        android:text="머릿말"
+        android:onClick="day0ButtonOnClicked"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <Button
+        android:id="@+id/day1"
+        android:text="day-1"
+        android:layout_below="@+id/day0"
+        android:onClick="day1ButtonOnClicked"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <Button
+        android:id="@+id/day2"
+        android:layout_below="@+id/day1"
+        android:text="day-2"
+        android:onClick="day2ButtonOnClicked"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+</RelativeLayout>
