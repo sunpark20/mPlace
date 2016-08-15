@@ -286,6 +286,13 @@ public class Day_Activity extends AppCompatActivity {
         alarmTimeHM.clear();
     }
 
+    @Override
+    protected void onDestroy() { //액티비티를 나갈 땐 모든 핸들러 멈추기.
+        super.onDestroy();
+        cancleHandler(alarmHandler);
+        cancleHandler(firstPageAniHandler);
+        cancleHandler(firstPageSoundHandler);
+    }
 }
 
 
