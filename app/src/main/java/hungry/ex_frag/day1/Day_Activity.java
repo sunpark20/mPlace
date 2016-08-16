@@ -1,6 +1,8 @@
 package hungry.ex_frag.day1;
 
 import android.content.Context;
+import android.content.Intent;
+import android.content.pm.ResolveInfo;
 import android.graphics.drawable.AnimationDrawable;
 import android.media.AudioManager;
 import android.media.MediaPlayer;
@@ -9,24 +11,34 @@ import android.os.Handler;
 import android.os.Message;
 import android.os.Vibrator;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.youtube.player.YouTubeInitializationResult;
+import com.google.android.youtube.player.YouTubeStandalonePlayer;
+
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 
 import hungry.ex_frag.MainActivity;
 import hungry.ex_frag.R;
 import hungry.ex_frag.aStatic.PushWakeLock;
+import hungry.ex_frag.youtube.DeveloperKey;
 
 /**
  * Created by soy on 2016-07-14.
  */
 public class Day_Activity extends AppCompatActivity {
+    final private String LNAME="Day_Activity";
 
+    public static int setArrayCount=0;
+
+    public static ArrayList<Integer> youtubeAL=new ArrayList<>();
     public static ArrayList<TI> tiArray=new ArrayList<>();
     public static ArrayList<Integer> touchPage =new ArrayList<>();
     public static ArrayList<Integer> touchSound =new ArrayList<>();
@@ -35,11 +47,14 @@ public class Day_Activity extends AppCompatActivity {
     public static HashMap<Integer, Integer> firstPageSound=new HashMap<>();
     public static HashMap<Integer, Integer> alarmTimeHM=new HashMap<>();
 
+
     TextView tv;
     TextView pageNum;
     ImageView iv;
     Button preButton;
     Button nextButton;
+    Button youtubeButton;
+
     int currentPage=0;
 
     //터치와 알람 관리.
@@ -59,6 +74,10 @@ public class Day_Activity extends AppCompatActivity {
     //animation
     static AnimationDrawable frameAnimation;
 
+    //youtube
+    private static final String VIDEO_ID = "Lr-towHhQuE";
+    private static final int REQ_START_STANDALONE_PLAYER = 1;
+    private static final int REQ_RESOLVE_SERVICE_MISSING = 2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -74,7 +93,30 @@ public class Day_Activity extends AppCompatActivity {
         //<<<start set timer
         timer = (TextView) findViewById(R.id.timer);
         //>>>end set timer
+
+        //youtube
+        youtubeButton= (Button) findViewById(R.id.youtubeButton);;
+
         setTiArray();
+
+        youtubeButton.setOnClickListener(new View.OnClickListener() {
+            Intent intent = null;
+
+            @Override
+            public void onClick(View v) {
+                intent = YouTubeStandalonePlayer.createVideoIntent(
+                        Day_Activity.this, DeveloperKey.DEVELOPER_KEY, VIDEO_ID, 0, true, false);
+                if (intent != null) {
+                    if (canResolveIntent(intent)) {
+                        startActivityForResult(intent, REQ_START_STANDALONE_PLAYER);
+                    } else {
+                        // Could not resolve the intent - must need to install or update the YouTube API service.
+                        YouTubeInitializationResult.SERVICE_MISSING
+                                .getErrorDialog(Day_Activity.this, REQ_RESOLVE_SERVICE_MISSING).show();
+                    }
+                }
+            }
+        });
 
         preButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -93,7 +135,6 @@ public class Day_Activity extends AppCompatActivity {
             }
         });
 
-
         //화면 터치에 다음으로 가기.
         iv.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -107,6 +148,11 @@ public class Day_Activity extends AppCompatActivity {
                 }
             }
         });
+    }
+
+    private boolean canResolveIntent(Intent intent) {
+        List<ResolveInfo> resolveInfo = getPackageManager().queryIntentActivities(intent, 0);
+        return resolveInfo != null && !resolveInfo.isEmpty();
     }
 
     void preLoad(){
@@ -141,7 +187,6 @@ public class Day_Activity extends AppCompatActivity {
 
         //handler1 - alarm page
         if(alarmDrawableHM.get(currentPage)!=null){
-
             // < sync start
             //alarmTime도 번들로 묶어서 핸들러로 보내면 좋은데, 1초후에 핸들러메세지 다시 보낼때 문제가 발생.
             //sync-1
@@ -168,6 +213,17 @@ public class Day_Activity extends AppCompatActivity {
             firstPageSoundHandler.sendEmptyMessage(currentPage);
         }else{
             cancleHandler(firstPageSoundHandler);
+        }
+
+        //youtube
+        if(youtubeButton.getVisibility()==View.GONE){
+            if(youtubeAL.contains(currentPage)) {
+                iv.setVisibility(View.GONE);
+                youtubeButton.setVisibility(View.VISIBLE);
+            }
+        }else{
+            iv.setVisibility(View.VISIBLE);
+            youtubeButton.setVisibility(View.GONE);
         }
     }
 
@@ -211,7 +267,7 @@ public class Day_Activity extends AppCompatActivity {
             PushWakeLock.acquireCpuWakeLock(getApplicationContext());
             alarmSound();
             nextLoad();
-            setAnimation(alarmDrawableHM.get(num), 5000);
+            setAnimation(alarmDrawableHM.get(num), 5000*12);
             PushWakeLock.releaseCpuLock();
         }
     }
@@ -277,6 +333,7 @@ public class Day_Activity extends AppCompatActivity {
         doCommonThings();
     }
     public static void initAllArray(){
+        setArrayCount=0;
         tiArray.clear();
         touchPage.clear();
         touchSound.clear();
@@ -284,14 +341,22 @@ public class Day_Activity extends AppCompatActivity {
         firstPageAniDrawableHM.clear();
         firstPageSound.clear();
         alarmTimeHM.clear();
+        youtubeAL.clear();
     }
 
     @Override
     protected void onDestroy() { //액티비티를 나갈 땐 모든 핸들러 멈추기.
         super.onDestroy();
-        cancleHandler(alarmHandler);
-        cancleHandler(firstPageAniHandler);
-        cancleHandler(firstPageSoundHandler);
+        alarmHandler.removeCallbacksAndMessages(null);
+        firstPageAniHandler.removeCallbacksAndMessages(null);
+        firstPageSoundHandler.removeCallbacksAndMessages(null);
+        Log.e(LNAME, "온 디스트로이");
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        Log.e(LNAME, "온스탑");
     }
 }
 
