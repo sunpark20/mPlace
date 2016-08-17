@@ -20,7 +20,6 @@ import android.widget.Toast;
 
 import com.google.android.youtube.player.YouTubeInitializationResult;
 import com.google.android.youtube.player.YouTubeStandalonePlayer;
-
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -36,8 +35,8 @@ import hungry.ex_frag.youtube.DeveloperKey;
 public class Day_Activity extends AppCompatActivity {
     final private String LNAME="Day_Activity";
 
+    // < this variable need init before start each day
     public static int setArrayCount=0;
-
     public static ArrayList<Integer> youtubeAL=new ArrayList<>();
     public static ArrayList<TI> tiArray=new ArrayList<>();
     public static ArrayList<Integer> touchPage =new ArrayList<>();
@@ -46,7 +45,8 @@ public class Day_Activity extends AppCompatActivity {
     public static HashMap<Integer, Integer> firstPageAniDrawableHM =new HashMap<>();
     public static HashMap<Integer, Integer> firstPageSound=new HashMap<>();
     public static HashMap<Integer, Integer> alarmTimeHM=new HashMap<>();
-
+    public static int currentPage=0;
+    // >
 
     TextView tv;
     TextView pageNum;
@@ -55,7 +55,7 @@ public class Day_Activity extends AppCompatActivity {
     Button nextButton;
     Button youtubeButton;
 
-    int currentPage=0;
+
 
     //터치와 알람 관리.
     int alarmTime=0;
@@ -82,6 +82,8 @@ public class Day_Activity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        Log.e(LNAME, "onCreate");
+
         setContentView(R.layout.frag_day1_1);
         setTitle(MainActivity.dayTitle);
 
@@ -255,7 +257,7 @@ public class Day_Activity extends AppCompatActivity {
     };
 
     //handler1 method
-    private void runAlarm(int num){
+    private void runAlarm(int num) {
         alarmTime--;
         timer.setText(alarmTime + "");
         // 메세지를 처리하고 또다시 핸들러에 메세지 전달 (1000ms 지연)
@@ -333,6 +335,7 @@ public class Day_Activity extends AppCompatActivity {
         doCommonThings();
     }
     public static void initAllArray(){
+        currentPage=0;
         setArrayCount=0;
         tiArray.clear();
         touchPage.clear();
@@ -347,11 +350,12 @@ public class Day_Activity extends AppCompatActivity {
     @Override
     protected void onDestroy() { //액티비티를 나갈 땐 모든 핸들러 멈추기.
         super.onDestroy();
+        Log.e(LNAME, "온 디스트로이");
         alarmHandler.removeCallbacksAndMessages(null);
         firstPageAniHandler.removeCallbacksAndMessages(null);
         firstPageSoundHandler.removeCallbacksAndMessages(null);
-        Log.e(LNAME, "온 디스트로이");
     }
+
 
     @Override
     protected void onStop() {
