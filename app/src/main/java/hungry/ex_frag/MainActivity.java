@@ -12,6 +12,7 @@ import hungry.ex_frag.day1.Day_Activity;
 import hungry.ex_frag.day1.day0_static;
 import hungry.ex_frag.day1.day1_static;
 import hungry.ex_frag.day1.day2_static;
+import hungry.ex_frag.day1.day3_static;
 
 public class MainActivity extends AppCompatActivity {
     public static String dayTitle;
@@ -19,6 +20,9 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        //notice
+        Intent intent = new Intent(this, NoticeActivity.class);
+        startActivity(intent);
     }
 
     public void day0ButtonOnClicked(View view) {
@@ -37,6 +41,12 @@ public class MainActivity extends AppCompatActivity {
     public void day2ButtonOnClicked(View view) {
         day2_static.setTiArray();
         dayTitle="Day 2 숫자 -> 이미지";
+        Intent intent = new Intent(this, Day_Activity.class);
+        startActivity(intent);
+    }
+    public void day3ButtonOnClicked(View view) {
+        day3_static.setTiArray();
+        dayTitle="Day 3 장소 기억법";
         Intent intent = new Intent(this, Day_Activity.class);
         startActivity(intent);
     }
@@ -62,4 +72,5 @@ public class MainActivity extends AppCompatActivity {
         Thread thread = new Thread(task);
         thread.start();
     }
+
 }

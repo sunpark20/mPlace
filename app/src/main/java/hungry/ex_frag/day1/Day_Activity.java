@@ -15,11 +15,13 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.ScrollView;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.youtube.player.YouTubeInitializationResult;
 import com.google.android.youtube.player.YouTubeStandalonePlayer;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -27,6 +29,7 @@ import java.util.List;
 import hungry.ex_frag.MainActivity;
 import hungry.ex_frag.R;
 import hungry.ex_frag.aStatic.PushWakeLock;
+import hungry.ex_frag.trash.OnSwipeTouchListener;
 import hungry.ex_frag.youtube.DeveloperKey;
 
 /**
@@ -54,6 +57,7 @@ public class Day_Activity extends AppCompatActivity {
     Button preButton;
     Button nextButton;
     Button youtubeButton;
+    ScrollView scV;
 
 
 
@@ -96,6 +100,61 @@ public class Day_Activity extends AppCompatActivity {
         timer = (TextView) findViewById(R.id.timer);
         //>>>end set timer
 
+        //        //화면 터치에 다음으로 가기.
+//        iv.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                if(touchPage.contains(currentPage))
+//                    nextLoad();
+//                if(touchSound.contains(currentPage)) {
+//                    if(fsMedia!=null)
+//                        fsMedia.stop();
+//                    runSound(R.raw.highfive);
+//                }
+//            }
+//        });
+
+
+        iv.setOnTouchListener(new OnSwipeTouchListener(getApplicationContext()) {
+            public void Touch(){
+                Log.e("EE",touchSound+"");
+                if(touchPage.contains(currentPage))
+                    nextLoad();
+                if(touchSound.contains(currentPage)) {
+                    if (fsMedia != null)
+                        fsMedia.stop();
+                    runSound(R.raw.highfive);
+                }
+            }
+//            public void onSwipeTop() {
+//                Toast.makeText(getApplicationContext(), "top", Toast.LENGTH_SHORT).show();
+//                Log.e("dd","top");
+//            }
+            public void onSwipeRight() {
+                preLoad();
+            }
+            public void onSwipeLeft() {
+                nextLoad();
+            }
+//            public void onSwipeBottom() {
+//                Toast.makeText(getApplicationContext(), "bottom", Toast.LENGTH_SHORT).show();
+//                Log.e("dd", "bottom");
+//            }
+
+        });
+        scV=(ScrollView)findViewById(R.id.scV);
+        scV.setOnTouchListener(new OnSwipeTouchListener(getApplicationContext()) {
+            public void onSwipeRight() {
+                preLoad();
+            }
+
+            public void onSwipeLeft() {
+                nextLoad();
+            }
+        });
+
+
+
         //youtube
         youtubeButton= (Button) findViewById(R.id.youtubeButton);;
 
@@ -137,19 +196,7 @@ public class Day_Activity extends AppCompatActivity {
             }
         });
 
-        //화면 터치에 다음으로 가기.
-        iv.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if(touchPage.contains(currentPage))
-                    nextLoad();
-                if(touchSound.contains(currentPage)) {
-                    if(fsMedia!=null)
-                        fsMedia.stop();
-                    runSound(R.raw.highfive);
-                }
-            }
-        });
+
     }
 
     private boolean canResolveIntent(Intent intent) {
@@ -180,7 +227,8 @@ public class Day_Activity extends AppCompatActivity {
     }
 
     void doCommonThings(){
-
+        //scrollview position init
+        scV.scrollTo(0, 0);
         if(fsMedia!=null)
             fsMedia.stop();
 
@@ -220,7 +268,7 @@ public class Day_Activity extends AppCompatActivity {
         //youtube
         if(youtubeButton.getVisibility()==View.GONE){
             if(youtubeAL.contains(currentPage)) {
-                iv.setVisibility(View.GONE);
+                iv.setVisibility(View.INVISIBLE);
                 youtubeButton.setVisibility(View.VISIBLE);
             }
         }else{

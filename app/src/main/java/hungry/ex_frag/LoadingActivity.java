@@ -1,36 +1,48 @@
 package hungry.ex_frag;
 
 import android.content.Intent;
-import android.graphics.drawable.AnimationDrawable;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Message;
 import android.support.v7.app.AppCompatActivity;
-import android.view.View;
-import android.widget.ImageView;
+
+import java.lang.ref.WeakReference;
+
+import hungry.ex_frag.mongo.Thread_notice;
 
 public class LoadingActivity extends AppCompatActivity {
+    public static MyHandler mHandler;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_loading);
         getSupportActionBar().hide();
+        mHandler= new MyHandler(this);
 
-        final ImageView animImageView = (ImageView) findViewById(R.id.ivAnimation);
-        animImageView.setBackgroundResource(R.drawable.anim);
-        animImageView.post(new Runnable() {
-            @Override
-            public void run() {
-                AnimationDrawable frameAnimation =
-                        (AnimationDrawable) animImageView.getBackground();
-                frameAnimation.start();
-            }
-        });
-
+        //https://api.mlab.com/api/1/databases/my-db/collections/my-coll?apiKey=myAPIKey
+        //https://api.mlab.com/api/1/databases/my-db/collections/my-coll?q={"active": true}&apiKey=myAPIKey
+        new Thread_notice(this).execute();
     }
 
-    public void relativeOnClicked(View view) {
-        Intent intent = new Intent(this, MainActivity.class);
-        startActivity(intent);
-        finish();
+    public static class MyHandler extends Handler {
+        private final WeakReference<LoadingActivity> mActivity;
+
+        public MyHandler(LoadingActivity activity) {
+            mActivity = new WeakReference<LoadingActivity>(activity);
+        }
+
+        @Override
+        public void handleMessage(Message msg) {
+            LoadingActivity activity = mActivity.get();
+            if (activity != null) {
+                Intent intent = new Intent(activity, MainActivity.class);
+                activity.startActivity(intent);
+                activity.finish();
+            }
+        }
     }
 }
+
+
+

@@ -28,4 +28,13 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <Button
+        android:id="@+id/day3"
+        android:layout_below="@+id/day2"
+        android:text="day-3"
+        android:onClick="day3ButtonOnClicked"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
 </RelativeLayout>

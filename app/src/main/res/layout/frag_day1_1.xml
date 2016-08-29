@@ -9,9 +9,8 @@
         android:id="@+id/image"
         android:src="@drawable/d0_1"
         android:layout_width="match_parent"
-        android:layout_height="350dp"
+        android:layout_height="330dp"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="5dp"
         android:scaleType="fitXY"
         />
 
@@ -19,46 +18,67 @@
         android:id="@+id/youtubeButton"
         android:text="시청하기"
         android:layout_width="match_parent"
-        android:layout_height="350dp"
+        android:layout_height="330dp"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:gravity="center_vertical|center_horizontal"
         android:visibility="gone"
         />
-
-    <TextView
-        android:layout_marginTop="10dp"
-        android:layout_above="@+id/pageNum"
-        android:id="@+id/tvFragDay1_1"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginRight="10dp"
-        android:layout_marginLeft="10dp"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="text"
-        android:gravity="center_vertical|center_horizontal" />
-
     <LinearLayout
-        android:id="@+id/buttonLayout"
         android:layout_width="match_parent"
-        android:layout_height="58dp"
-        android:layout_marginBottom="5dp"
-        android:layout_alignParentBottom="true"
-        android:orientation="horizontal">
-        <Button
-            android:id="@+id/previousButton"
-            android:text="이전"
-            android:layout_width="0dp"
-            android:layout_weight="1"
-            android:layout_height="match_parent"
-            android:textAppearance="?android:attr/textAppearanceLarge"
-            />
-        <Button
-            android:id="@+id/nextButton"
-            android:text="다음"
-            android:layout_width="0dp"
-            android:layout_weight="1"
-            android:layout_height="match_parent"
-            android:textAppearance="?android:attr/textAppearanceLarge"/>
+        android:layout_height="match_parent"
+        android:layout_below="@+id/image"
+        android:orientation="vertical"
+        android:background="@drawable/xml_border">
+
+        <ScrollView
+            android:id="@+id/scV"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1">
+            <TextView
+                android:id="@+id/tvFragDay1_1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="10dp"
+                android:layout_marginLeft="10dp"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:textColor="@color/black"
+                android:text="text">
+                <!--android:layout_gravity="center_vertical">-->
+            </TextView>
+        </ScrollView>
+
+        <TextView
+            android:id="@+id/pageNum"
+            android:text="0 / 0"
+            android:paddingRight="5dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:layout_gravity="right" />
+
+        <LinearLayout
+            android:id="@+id/buttonLayout"
+            android:layout_width="match_parent"
+            android:layout_height="58dp"
+            android:layout_marginBottom="5dp"
+            android:orientation="horizontal">
+            <Button
+                android:id="@+id/previousButton"
+                android:text="이전"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="match_parent"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                />
+            <Button
+                android:id="@+id/nextButton"
+                android:text="다음"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="match_parent"
+                android:textAppearance="?android:attr/textAppearanceLarge"/>
+        </LinearLayout>
     </LinearLayout>
 
     <TextView
@@ -69,13 +89,4 @@
         android:textColor="@color/colorAccent"
         android:textAppearance="?android:attr/textAppearanceLarge"
         />
-
-    <TextView
-        android:id="@+id/pageNum"
-        android:text="0 / 0"
-        android:layout_above="@id/buttonLayout"
-        android:layout_alignParentRight="true"
-        android:paddingRight="5dp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
 </RelativeLayout>
