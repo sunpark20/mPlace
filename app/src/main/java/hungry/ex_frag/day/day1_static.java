@@ -1,4 +1,4 @@
-package hungry.ex_frag.day1;
+package hungry.ex_frag.day;
 
 import java.util.ArrayList;
 
@@ -93,17 +93,17 @@ public class day1_static {
         Static.setBundle();
 
         Day_Activity.tiArray.add(new TI(
-                "준비물10. 돋보기 - 발\n   ▽\n띠오잉~ 발이 크게 보여요.\n   ▽\n입으로 띠오잉 하고 효과음을 내세요.\n   ▽\n 반드시 해야 외울 수 있습니다.",
+                "준비물10. 돋보기 - 발\n   ▽\n띠오잉~ 발이 크게 보여요.\n   ▽\n입으로 띠오잉 하고 효과음을 내세요. 잘 외워집니다....",
                 R.drawable.d2_14)); //14
         Static.setBundle();
 
         Day_Activity.tiArray.add(new TI(
-                "다 됐습니다!! 눈을 감고 머리부터 쭉 내려오며 준비물을 생각해봅시다.\n   ▽\n(다음 페이지에는 정답이 있습니다.) ",
+                "<미션> 눈을 감고 머리부터 쭉 내려오며 준비물을 맞춰봅시다.\n\n(다음 페이지에는 정답이 있습니다.) ",
                 R.drawable.d2_15)); //15
         Static.setBundle();
 
         Day_Activity.tiArray.add(new TI(
-                "1.8절 스케치북 2.드로잉 재료 3.자석 4.아주 가는 철사 5.탬버린 6.등산용 양말 7.점토 8.마이크 9.단무지 10.돋보기\n   ▽\n여러분들 덕분에 철수가 상을 받았다고 합니다.",
+                "1.8절 스케치북 2.드로잉 재료 3.자석 4.아주 가는 철사 5.탬버린\n6.등산용 양말 7.점토 8.마이크 9.해바라기 10.돋보기\n   ▽\n여러분들 덕분에 철수가 상을 받았다고 합니다.",
                 R.drawable.d1_30)); //16
         Static.setBundle();
 
@@ -114,7 +114,7 @@ public class day1_static {
         Static.setBundle();
 
         Day_Activity.tiArray.add(new TI(
-                "혹시 다 못마추셨어도 실망하지 마세요. 우리는 점점 똑똑해지고 있습니다. 정말입니다!!\n   ▽\n그리고 여러분은 지금 준비물의 순서까지 외우고 있습니다.\n놀랍죠?!?\n   ▽\n아니면 말고..\n   ▽\n다음 단계에서 만나요!" ,
+                "혹시 다 못마추셨어도 실망하지 마세요. 우리는 점점 똑똑해지고 있습니다.\n\n그리고 여러분은 지금 준비물의 순서까지 외우고 있습니다. 천재네요.\n다음 단계에서 만나요!" ,
                 R.drawable.d0_3)); //18
         Static.setBundle();
     }

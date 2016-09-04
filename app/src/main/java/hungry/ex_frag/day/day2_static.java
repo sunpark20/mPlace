@@ -1,4 +1,4 @@
-package hungry.ex_frag.day1;
+package hungry.ex_frag.day;
 
 import hungry.ex_frag.R;
 
@@ -59,12 +59,12 @@ public class day2_static {
 
 
         Day_Activity.tiArray.add(new TI(
-                "1은 검입니다.\n   ▽\n아이고 똥꼬에 찔리면 아프겠어요.",
+                "1은 검입니다.\n   ▽\n찔리면 엄청 아프겠어요.",
                 0));
         Static.setBundle();
 
         Day_Activity.tiArray.add(new TI(
-                "숫자2를 바꿔 봅시다.\n   ▽\n호수위의 저 백조숫자 2와 닮았나요?"+w,
+                "숫자2를 바꿔 봅시다.\n   ▽\n호수위의 백조, 숫자 2와 닮았나요?"+w,
                 0));
         Day_Activity.firstPageAniDrawableHM.put(Day_Activity.setArrayCount, R.drawable.d1_12_ani);
         Day_Activity.alarmDrawableHM.put(Day_Activity.setArrayCount, R.drawable.d1_13_ani);
@@ -154,7 +154,7 @@ public class day2_static {
         Static.setBundle();
 
         Day_Activity.tiArray.add(new TI(
-                "눈을 감고 다음 미션을 수행하세요.\n   ▽\n폰을 놓고, 눈을 감은 뒤 0~9까지 숫자를 변환된 이미지로 떠올려본다.\n   ▽\n혹시 잘 떠오르지 않으면 다시 복습하시고 오세요.\n   ▽\n그리고 다음을 눌려주세요.",
+                "<미션> 0~9를 이미지로 변환하자.\n폰을 놓고, 눈을 감은 0~9까지 숫자를 변환된 이미지로 떠올려본다.\n\n혹시 잘 떠오르지 않으면 다시 복습하시고 오세요.\n\n다 하시면 다음을 눌러주세요.",
                 R.drawable.umm)); //28
         Static.setBundle();
 
@@ -169,7 +169,7 @@ public class day2_static {
         Static.setBundle();
 
         Day_Activity.tiArray.add(new TI(
-                "눈을 감고 다음 미션을 수행하세요\n   ▽\n1.(괄호) 속 내용은 이유나 배경입니다.\n   ▽\n2.밑의 예시를 보고 장면을 상상하세요\n   ▽\n42:(날씨가 좋아 놀러간다)요트에 백조를 태웠다.\n   ▽\n25:(갑자기 바람이 불어서)백조가 갈고리에 찔렸다.\n   ▽\n56:(또 강풍이 불어요)갈고리는 앵두도 찔렀다.",
+                "<미션> 눈을 감고 다음 미션을 수행하세요\n   ▽\n1.(괄호) 속 내용은 이유나 배경입니다.\n   ▽\n2.밑의 예시를 보고 장면을 상상하세요\n   ▽\n42:(날씨가 좋아 놀러간다)요트에 백조를 태웠다.\n   ▽\n25:(갑자기 바람이 불어서)백조가 갈고리에 찔렸다.\n   ▽\n56:(또 강풍이 불어요)갈고리는 앵두도 찔렀다.",
                 R.drawable.phone)); //31
         Static.setBundle();
 
@@ -179,7 +179,7 @@ public class day2_static {
         Static.setBundle();
 
         Day_Activity.tiArray.add(new TI(
-                "이야기 만들기는 다소 어려울 수 있습니다.\n   ▽\n하지만 이치에 맞지 않는 이야기도 체인과 이미지의 힘으로 보완할 수 있습니다.\n   ▽\n상상은 당신의 몫입니다. 5분이 지나면 알려드릴께요.",
+                "<미션> 이야기 만들기는 다소 어려울 수 있습니다.\n   ▽\n하지만 이치에 맞지 않는 이야기도 체인과 이미지의 힘으로 보완할 수 있습니다.\n   ▽\n상상은 당신의 몫입니다. 5분이 지나면 알려드릴께요.",
                 R.drawable.go)); //33
         Day_Activity.alarmTimeHM.put(Day_Activity.setArrayCount, 5 * 60);
         Day_Activity.alarmDrawableHM.put(Day_Activity.setArrayCount, 0);

@@ -1,9 +1,20 @@
 <resources>
 
     <!-- Base application theme. -->
-    <style name="AppTheme" parent="Theme.AppCompat.Light">
-
+    <style name="AppTheme" parent="Theme.AppCompat.Light"></style>
+    <style name="nPracTv">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">0dp</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textAppearance">?android:attr/textAppearanceSmall</item>
     </style>
 
+    <style name="mainButton">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:gravity">left</item>
+        <item name="android:textAppearance">?android:attr/textAppearanceLarge</item>
+    </style>
 
 </resources>

@@ -1,4 +1,4 @@
-package hungry.ex_frag.day1;
+package hungry.ex_frag.day;
 
 import android.content.Context;
 import android.graphics.Canvas;

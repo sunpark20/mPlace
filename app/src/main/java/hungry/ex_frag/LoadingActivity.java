@@ -4,13 +4,12 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
-import android.support.v7.app.AppCompatActivity;
 
 import java.lang.ref.WeakReference;
 
 import hungry.ex_frag.mongo.Thread_notice;
 
-public class LoadingActivity extends AppCompatActivity {
+public class LoadingActivity extends ActivityHelper{
     public static MyHandler mHandler;
 
     @Override

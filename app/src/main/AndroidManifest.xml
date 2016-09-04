@@ -12,20 +12,25 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+
         <activity android:name=".LoadingActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".MainActivity" android:label="@string/app_name"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".day1.Day_Activity" android:parentActivityName=".MainActivity"
-            android:screenOrientation="portrait"/>
         <activity android:name=".NoticeActivity"
             android:theme="@android:style/Theme.Dialog"/>
-
-
+        <activity android:name=".MainActivity" android:label="@string/app_name" />
+        <activity android:name=".day.Day_Activity" android:parentActivityName=".MainActivity" />
+        <activity android:name=".numPrac.NumPrac_Activity" android:parentActivityName=".MainActivity"
+            android:label="@string/numPrac"/>
+        <activity android:name=".numPrac.NumPrac_mem_Activity" android:parentActivityName=".numPrac.NumPrac_Activity"
+            android:label="@string/numPrac_mem"/>
+        <activity android:name=".numPrac.NumPrac_mem_date_Activity" android:parentActivityName=".numPrac.NumPrac_mem_Activity"
+            android:label="@string/numPrac_mem_date"/>
+        <activity android:name=".numPrac.NumPrac_mem_score_Activity" android:parentActivityName=".numPrac.NumPrac_mem_Activity"
+            android:label="@string/numPrac_mem_score"/>
     </application>
 
 </manifest>

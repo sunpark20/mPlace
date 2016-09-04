@@ -3,51 +3,74 @@ package hungry.ex_frag;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.SystemClock;
-import android.support.v7.app.AppCompatActivity;
+import android.support.v4.app.ActivityCompat;
 import android.util.Log;
 import android.view.View;
 
 import hungry.ex_frag.aStatic.StaticMethod;
-import hungry.ex_frag.day1.Day_Activity;
-import hungry.ex_frag.day1.day0_static;
-import hungry.ex_frag.day1.day1_static;
-import hungry.ex_frag.day1.day2_static;
-import hungry.ex_frag.day1.day3_static;
+import hungry.ex_frag.aStatic.StaticVari;
+import hungry.ex_frag.day.Day_Activity;
+import hungry.ex_frag.day.day0_static;
+import hungry.ex_frag.day.day1_static;
+import hungry.ex_frag.day.day2_static;
+import hungry.ex_frag.day.day3_static;
+import hungry.ex_frag.day.day4_static;
+import hungry.ex_frag.numPrac.NumPrac_Activity;
 
-public class MainActivity extends AppCompatActivity {
-    public static String dayTitle;
+public class MainActivity extends ActivityHelper {
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
         //notice
-        Intent intent = new Intent(this, NoticeActivity.class);
-        startActivity(intent);
+        if(!StaticVari.worked_notice){
+            StaticVari.worked_notice=true; //only once run notice
+            StaticVari.dialogTitle="공지사항";
+            Intent intent = new Intent(this, NoticeActivity.class);
+            startActivity(intent);
+        }
+
     }
 
     public void day0ButtonOnClicked(View view) {
         day0_static.setTiArray();
-        dayTitle="Day 0 머릿말";
+        Day_Activity.dayTitle=getString(R.string.intro);
         Intent intent = new Intent(this, Day_Activity.class);
         startActivity(intent);
     }
 
     public void day1ButtonOnClicked(View view) {
         day1_static.setTiArray();
-        dayTitle="Day 1 몸 기억법";
+        Day_Activity.dayTitle=getString(R.string.day1);
         Intent intent = new Intent(this, Day_Activity.class);
         startActivity(intent);
     }
+
     public void day2ButtonOnClicked(View view) {
         day2_static.setTiArray();
-        dayTitle="Day 2 숫자 -> 이미지";
+        Day_Activity.dayTitle=getString(R.string.day2);
         Intent intent = new Intent(this, Day_Activity.class);
         startActivity(intent);
     }
+
     public void day3ButtonOnClicked(View view) {
         day3_static.setTiArray();
-        dayTitle="Day 3 장소 기억법";
+        Day_Activity.dayTitle=getString(R.string.day3);
         Intent intent = new Intent(this, Day_Activity.class);
+        startActivity(intent);
+    }
+
+    public void day4ButtonOnClicked(View view) {
+        day4_static.setTiArray();
+        Day_Activity.dayTitle=getString(R.string.day4);
+        Intent intent = new Intent(this, Day_Activity.class);
+        startActivity(intent);
+    }
+
+    public void day6_pacButtonOnClicked(View view) {
+        Intent intent = new Intent(this, NumPrac_Activity.class);
         startActivity(intent);
     }
 
@@ -59,8 +82,13 @@ public class MainActivity extends AppCompatActivity {
             String message = "'뒤로'버튼을 한번 더 누르면 종료됩니다.";
             StaticMethod.fToast(this, message);
         }
-        if(exitCount==2)
+        if(exitCount==2) {
             MainActivity.this.finish();
+
+            ActivityCompat.finishAffinity(this);
+            System.runFinalization();
+            System.exit(0);
+        }
 
         Runnable task = new Runnable() {
             public void run() {
@@ -72,5 +100,4 @@ public class MainActivity extends AppCompatActivity {
         Thread thread = new Thread(task);
         thread.start();
     }
-
 }

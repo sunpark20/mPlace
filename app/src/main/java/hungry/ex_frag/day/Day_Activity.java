@@ -1,4 +1,4 @@
-package hungry.ex_frag.day1;
+package hungry.ex_frag.day;
 
 import android.content.Context;
 import android.content.Intent;
@@ -10,7 +10,6 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
 import android.os.Vibrator;
-import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -26,7 +25,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
-import hungry.ex_frag.MainActivity;
+import hungry.ex_frag.ActivityHelper;
 import hungry.ex_frag.R;
 import hungry.ex_frag.aStatic.PushWakeLock;
 import hungry.ex_frag.trash.OnSwipeTouchListener;
@@ -35,8 +34,9 @@ import hungry.ex_frag.youtube.DeveloperKey;
 /**
  * Created by soy on 2016-07-14.
  */
-public class Day_Activity extends AppCompatActivity {
+public class Day_Activity extends ActivityHelper {
     final private String LNAME="Day_Activity";
+    public static String dayTitle;
 
     // < this variable need init before start each day
     public static int setArrayCount=0;
@@ -71,7 +71,6 @@ public class Day_Activity extends AppCompatActivity {
     long[] pattern = { 3000, 500, 3000, 500};
 
     //timer variable
-    public static int ALARM_TIME_DEFAULT =5000;
     public TextView timer;
     AudioManager mAudioManager;
 
@@ -88,8 +87,8 @@ public class Day_Activity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         Log.e(LNAME, "onCreate");
 
-        setContentView(R.layout.frag_day1_1);
-        setTitle(MainActivity.dayTitle);
+        setContentView(R.layout.frag_day);
+        setTitle(Day_Activity.dayTitle);
 
         tv = (TextView) findViewById(R.id.tvFragDay1_1);
         pageNum = (TextView) findViewById(R.id.pageNum);

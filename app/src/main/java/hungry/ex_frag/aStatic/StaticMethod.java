@@ -36,9 +36,6 @@ public class StaticMethod {
 
     public static JSONArray[] jArr_team=new JSONArray[5];
 
-
-
-
     //시간측정
     static private long start,end;
 

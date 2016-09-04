@@ -1,4 +1,4 @@
-package hungry.ex_frag.day1;
+package hungry.ex_frag.day;
 
 /**
  * Created by soy on 2016-07-21.

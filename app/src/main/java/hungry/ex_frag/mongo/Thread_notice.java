@@ -92,8 +92,8 @@ public class Thread_notice extends AsyncTask<String, Void, String> {
 
         URL url = new URL(urlString);
         HttpURLConnection conn = (HttpURLConnection) url.openConnection();
-        conn.setReadTimeout(10000 /* milliseconds */);
-        conn.setConnectTimeout(15000 /* milliseconds */);
+        conn.setReadTimeout(3000 /* milliseconds */);
+        conn.setConnectTimeout(1500 /* milliseconds */);
         conn.setRequestMethod("GET");
         conn.setRequestProperty("Accept", "application/json");
         if (conn.getResponseCode() != 200) {
