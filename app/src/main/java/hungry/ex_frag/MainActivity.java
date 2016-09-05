@@ -15,6 +15,7 @@ import hungry.ex_frag.day.day1_static;
 import hungry.ex_frag.day.day2_static;
 import hungry.ex_frag.day.day3_static;
 import hungry.ex_frag.day.day4_static;
+import hungry.ex_frag.day.day_statc_fc;
 import hungry.ex_frag.numPrac.NumPrac_Activity;
 
 public class MainActivity extends ActivityHelper {
@@ -69,6 +70,13 @@ public class MainActivity extends ActivityHelper {
         startActivity(intent);
     }
 
+    public void firstChallengeButtonOnClicked(View view) {
+        day_statc_fc.setTiArray();
+        Day_Activity.dayTitle=getString(R.string.day_fc);
+        Intent intent = new Intent(this, Day_Activity.class);
+        startActivity(intent);
+    }
+
     public void day6_pacButtonOnClicked(View view) {
         Intent intent = new Intent(this, NumPrac_Activity.class);
         startActivity(intent);
@@ -100,4 +108,6 @@ public class MainActivity extends ActivityHelper {
         Thread thread = new Thread(task);
         thread.start();
     }
+
+
 }

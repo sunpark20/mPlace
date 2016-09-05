@@ -40,8 +40,17 @@
 
     <Button
         style="@style/mainButton"
-        android:id="@+id/day6_pac"
+        android:id="@+id/firstChallenge"
         android:layout_below="@+id/day4"
+        android:text="@string/day_fc"
+        android:onClick="firstChallengeButtonOnClicked" />
+
+    <Button
+        style="@style/mainButton"
+        android:id="@+id/day6_pac"
+        android:layout_below="@+id/firstChallenge"
         android:text="@string/numPrac"
         android:onClick="day6_pacButtonOnClicked" />
+
+
 </RelativeLayout>
