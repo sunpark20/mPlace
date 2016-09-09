@@ -37,25 +37,28 @@
         android:layout_below="@+id/day3"
         android:text="@string/day4"
         android:onClick="day4ButtonOnClicked" />
+    <LinearLayout
+        android:id="@+id/peopleToNum_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_below="@+id/day4">
+        <Button
+            style="@style/horizonTwo"
+            android:id="@+id/firstChallenge"
+            android:text="@string/day_fc"
+            android:onClick="firstChallengeButtonOnClicked" />
 
-    <Button
-        style="@style/mainButton"
-        android:id="@+id/firstChallenge"
-        android:layout_below="@+id/day4"
-        android:text="@string/day_fc"
-        android:onClick="firstChallengeButtonOnClicked" />
-
-    <Button
-        style="@style/mainButton"
-        android:id="@+id/peopleToNum_sample"
-        android:layout_below="@+id/firstChallenge"
-        android:text="@string/day_fc_sample"
-        android:onClick="peopleToNumsampleButtonOnClicked" />
-
+        <Button
+            style="@style/horizonTwo"
+            android:id="@+id/peopleToNum_sample"
+            android:text="@string/day_fc_sample"
+            android:onClick="peopleToNumsampleButtonOnClicked" />
+    </LinearLayout>
     <Button
         style="@style/mainButton"
         android:id="@+id/day6_pac"
-        android:layout_below="@+id/peopleToNum_sample"
+        android:layout_below="@+id/peopleToNum_container"
         android:text="@string/numPrac"
         android:onClick="day6_pacButtonOnClicked" />
 

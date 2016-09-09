@@ -174,8 +174,15 @@ public class day2_static {
         Static.setBundle();
 
         Day_Activity.tiArray.add(new TI(
-                "699:(상처를 치료하기 위해 앵두 안경을 만듦)앵두를 외알안경 2개에 안경알 대신 박았다.\n   ▽\n97:(상처를 치료하려고)외알안경과 마법의 지팡이를 착용했다.\n   ▽\n78:(전문의사인 눈사람이 왔다)지팡이를 눈사람에게 꽂아 팔을 만들어 줬다.",
+                "699:(상처를 치료하기 위해 앵두 안경을 만듦)앵두를 외알안경 2개에 안경알 대신 박았다.\n   ▽\n97:(상처를 치료하려고)외알안경과 마법의 지팡이를 착용했다.\n   ▽\n78:(전문의사인 눈사람이 왔다)지팡이를 눈사람에게 꽂아 팔을 만들어 줬다.\n다 외우시면 다음장으로 가주세요.",
                 R.drawable.phone)); //32
+        Static.setBundle();
+
+        Day_Activity.tiArray.add(new TI(
+                "방금 그 이야기 다시 한번 말해볼까요?? .,..,!?\n" +
+                        "몇 개 틀렸다구요? 괜찮아요. 자신이 만들어낸 이야기가 훨씬 기억에 잘 남을거에요. 다음 페이지로 가서 자신만의 이야기를 만들어 봅시다.",
+                R.drawable.d2_16)); //17
+        Day_Activity.touchSound.add(Day_Activity.setArrayCount);
         Static.setBundle();
 
         Day_Activity.tiArray.add(new TI(

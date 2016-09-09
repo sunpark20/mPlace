@@ -92,12 +92,12 @@ public class day3_static {
         Static.setBundle();
 
         Day_Activity.tiArray.add(new TI(
-                "다시 눈을 감고 마지막 장소로 가서 거꾸로 여행해봅시다. 끝나면 다음을 눌려주세요.",
+                "다시 눈을 감고 마지막 장소로 가서 거꾸로 여행해봅시다.\n거꾸로도, 중간으로 기억의 궁전을 이용하면 어디든지 갈 수 있습니다.",
                 R.drawable.d3_2));
         Static.setBundle();
 
         Day_Activity.tiArray.add(new TI(
-                "다 기억나시나요??? 우리는 이제 년도별 아카데미상을 기억하게 됐습니다.\n   ▽\n기억의 궁전을 몇번 거닐다 보면 절대 잊혀지지 않는 장기기억으로 뇌에 저장될 것입니다.\n   ▽\n특정한 것을 기억하기 위한 궁전을 따로 만들어 놓는다면 평생 기억할 수 있을거에요. 그럼 다음 시간에 만나요!",
+                "우리는 이제 년도별 아카데미상을 기억하게 됐습니다!! 짝짝\n   ▽\n기억의 궁전을 몇번 거닐다 보면 절대 잊혀지지 않는 장기기억으로 뇌에 저장될 것입니다.\n   ▽\n특정한 것을 기억하기 위한 궁전을 따로 만들어 놓는다면 평생 기억할 수 있을거에요. 그럼 다음 시간에 만나요!",
                 R.drawable.d2_16));
         Day_Activity.touchSound.add(Day_Activity.setArrayCount);
         Static.setBundle();

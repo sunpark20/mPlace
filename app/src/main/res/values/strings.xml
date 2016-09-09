@@ -5,8 +5,8 @@
     <string name="day2">\t\t\tday2- 상상하기</string>
     <string name="day3">\t\t\tday3- 장소</string>
     <string name="day4">\t\t\tday4- 숫자</string>
-    <string name="day_fc">\t\t\tday5- 첫번째 도전</string>
-    <string name="day_fc_sample">\t\t\t인물-숫자 샘플(준비중)</string>
+    <string name="day_fc">day5- 첫번째 도전</string>
+    <string name="day_fc_sample">인물-숫자 샘플</string>
     <string name="numPrac">\t\t\tday6- 숫자연습(준비중)</string>
     <string name="numPrac_mem">기록보기</string>
     <string name="numPrac_mem_date">날짜별 기록보기</string>

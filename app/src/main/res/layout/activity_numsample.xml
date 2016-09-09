@@ -22,5 +22,4 @@
         android:paddingLeft="2dp"
         android:stretchMode="columnWidth"
         android:layout_centerInParent="true" />
-
 </RelativeLayout>

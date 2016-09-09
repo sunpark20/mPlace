@@ -12,7 +12,7 @@ public class day4_static {
         Day_Activity.tiArray.add(new TI(
                 "오늘은 숫자를 외우는 기억법입니다. day2에서도 숫자를 외웠습니다. 그때는 조금 어려웠죠.\n" +
                         "숫자를 인물로 변환하고 기억의 궁전에 넣을 것입니다. 이 방법은 세계 기억력 대회 최다 우승자인 도미니크" +
-                        "오브라이언이 만들었습니다. 다른 챔피언들과 많은 사람들이 이 방법으로 숫자를 외우는 것으로 알고 있습니다.",
+                        " 오브라이언이 소개한 것으로 알고 있습니다.",
                 R.drawable.d4_1));
         Static.setBundle();
 
@@ -58,7 +58,7 @@ public class day4_static {
         Static.setBundle();
 
         Day_Activity.tiArray.add(new TI(
-                "잘 외우셨나요?? 저는 숫자를 인물로 변환하는데에 엄청 오래 걸렸습니다. 다음 시간에 만나요~",
+                "잘 외우셨나요?? 저는 숫자를 인물로 변환할 때, 생각이 안나서 고생한 기억이 있네요. 다음 시간에 만나요~",
                 R.drawable.d4_5));
         Static.setBundle();
 

@@ -1,12 +1,16 @@
 package hungry.ex_frag.numSample;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.GridView;
-import android.widget.Toast;
 
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.util.ArrayList;
 
 import hungry.ex_frag.ActivityHelper;
@@ -19,7 +23,7 @@ import hungry.ex_frag.mongo.Thread_notice;
  * Created by soy on 2016-07-14.
  */
 public class NumSample_Activity extends ActivityHelper {
-    static final int SIZE_TOTALNUM=100;
+    static ArrayList<Item> sampleAl=new ArrayList<>();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -28,18 +32,67 @@ public class NumSample_Activity extends ActivityHelper {
         GridView gridview = (GridView) findViewById(R.id.gridView);
         gridview.setAdapter(new GridViewAdapter(this, makeSet()));
 
+        readRawTextFile(this, R.raw.numsample);
+        show();
+
         gridview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             public void onItemClick(AdapterView<?> parent, View v,
                                     int position, long id) {
-                Toast.makeText(getApplicationContext(), "" + position,
-                        Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(getApplicationContext(), NumSample_Dialog.class);
+                intent.putExtra("position", position);
+                startActivity(intent);
             }
         });
     }
+
+    private void show(){
+        for(int i=0;i<sampleAl.size();i++){
+            Item item=sampleAl.get(i);
+            System.out.println(item.name+" "+item.cha+" "+item.des);
+        }
+    }
+
+    private static void readRawTextFile(Context ctx, int resId)
+    {
+        InputStream inputStream = ctx.getResources().openRawResource(resId);
+
+        InputStreamReader inputreader = new InputStreamReader(inputStream);
+        BufferedReader buffreader = new BufferedReader(inputreader);
+        String line;
+        StringBuilder text = new StringBuilder();
+
+        int c=0;
+        Item item=null;
+        try {
+            while (( line = buffreader.readLine()) != null) {
+                if(c%4==1) {
+                    item = new Item();
+                    item.setName(line);
+                }else if(c%4==2){
+                    item.setCha(line);
+                }else if(c%4==3){
+                    item.setDes(line);
+                    sampleAl.add(item);
+                }
+//                text.append(line);
+//                text.append('\n');
+                c++;
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+//            return null;
+        }
+//        return text.toString();
+    }
+
     private ArrayList<String> makeSet() {
         //It method to be optimal as conver array from list
         ArrayList<String> al = new ArrayList<>();
-        for (int a = 0; a < NumSample_Activity.SIZE_TOTALNUM; a++) {
+        for (int a = 0; a < 10; a++) {
+            String temp = String.valueOf(a);
+            al.add(temp);
+        }
+        for (int a = 0; a < 100; a++) {
             String temp = String.valueOf(a);
             while (temp.length() < 2)
                 temp = "0" + temp;

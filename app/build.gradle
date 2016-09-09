@@ -8,8 +8,8 @@ android {
         applicationId "hungry.ex_frag"
         minSdkVersion 16
         targetSdkVersion 23
-        versionCode 6
-        versionName "1.05"
+        versionCode 8
+        versionName "1.07"
     }
     buildTypes {
         release {

@@ -77,12 +77,12 @@ public class day1_static {
 
 
         Day_Activity.tiArray.add(new TI(
-                "준비물7. 점토 - 손\n   ▽\n점토를 손에 발라 왕주먹이 되었습니다. 루피랑 비슷하네요."+ w,
+                "준비물7. 점토 - 손\n   ▽\n점토를 손에 발라 왕주먹이 되었습니다. 루피랑 비슷하네요."+w,
                 R.drawable.d2_11));
         Static.setBundle();
 
         Day_Activity.tiArray.add(new TI(
-                "준비물8. 마이크 - 배\n   ▽\n배에 마이크를 붙였더니 꼬르륵 소리가 잘들리네요."+ w,
+                "준비물8. 마이크 - 배\n   ▽\n배에 마이크를 붙였더니 꼬르륵 소리가 잘들리네요.\n여기서 실제로는 배가 손보다 위에 있는데요? 하시는 분들은 순서를 바꿔서 외워주세요."+ w,
                 R.drawable.d2_12));
         Day_Activity.firstPageSound.put(Day_Activity.setArrayCount, R.raw.stomachgrowl);
         Static.setBundle();
@@ -95,6 +95,7 @@ public class day1_static {
         Day_Activity.tiArray.add(new TI(
                 "준비물10. 돋보기 - 발\n   ▽\n띠오잉~ 발이 크게 보여요.\n   ▽\n입으로 띠오잉 하고 효과음을 내세요. 잘 외워집니다....",
                 R.drawable.d2_14)); //14
+        Day_Activity.firstPageSound.put(Day_Activity.setArrayCount, R.raw.woah);
         Static.setBundle();
 
         Day_Activity.tiArray.add(new TI(
