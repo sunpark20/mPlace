@@ -7,7 +7,7 @@
 
     <ImageView
         android:id="@+id/mainImage"
-        android:src="@drawable/matteoricci"
+        android:src="@drawable/main"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:scaleType="fitXY"

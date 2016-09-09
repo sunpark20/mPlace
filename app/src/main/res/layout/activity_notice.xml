@@ -20,13 +20,32 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"/>
-    <TextView
-        android:id="@+id/tv"
-        android:layout_below="@id/exit"
+    <ScrollView
+        android:id="@+id/scrollView"
+        android:layout_below="@id/dialogTitle"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:textAppearance="?android:attr/textAppearanceMedium"/>
+        android:layout_height="400dp">
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <ImageView
+                android:layout_marginTop="150dp"
+                android:id="@+id/iv"
+                android:layout_width="match_parent"
+                android:layout_height="300dp"
+                android:layout_centerHorizontal="true"
+                android:scaleType="fitXY"
+                android:visibility="gone"
+                />
+            <TextView
+                android:gravity="bottom"
+                android:id="@+id/tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:textAppearance="?android:attr/textAppearanceMedium"/>
+        </FrameLayout>
+    </ScrollView>
     <Button
         android:text="닫기"
         android:id="@+id/exit2"

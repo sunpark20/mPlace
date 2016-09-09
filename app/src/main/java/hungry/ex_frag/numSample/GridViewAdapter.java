@@ -1,4 +1,4 @@
-package hungry.ex_frag.numPrac;
+package hungry.ex_frag.numSample;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -7,16 +7,17 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
 
+import java.util.ArrayList;
+
 import hungry.ex_frag.R;
 
-
-class ListViewAdapter extends BaseAdapter {
+class GridViewAdapter extends BaseAdapter {
     private Context context;
-    SavedDate sd;
+    private ArrayList<String> al;
 
-    public ListViewAdapter(Context context, SavedDate sd) {
+    public GridViewAdapter(Context context, ArrayList<String> al) {
         this.context = context;
-        this.sd = sd;
+        this.al = al;
     }
 
     public View getView(int position, View convertView, ViewGroup parent) {
@@ -24,31 +25,33 @@ class ListViewAdapter extends BaseAdapter {
         LayoutInflater inflater = (LayoutInflater) context
                 .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 
-        View listView;
+        View gridView;
         TextView tv=null;
 
         //틀만 재사용한다.
         if (convertView == null) {
-            listView = new View(context);
+            gridView = new View(context);
             // get layout from mobile.xml
-            listView = inflater.inflate(R.layout.item_numprac_mem_date, null);
+            gridView = inflater.inflate(R.layout.item_numprac_mem_score, null);
         } else {
-            listView = (View) convertView;
+            gridView = (View) convertView;
         }
         // set value into textview
-        tv = (TextView) listView
+        tv = (TextView) gridView
                 .findViewById(R.id.num);
-        int reversePosition=sd.date.size()-1-position;
-        String temp=sd.date.get(reversePosition)+"\n소요시간 - "+sd.time.get(reversePosition)+"\n틀린개수 - "+sd.inco.get(reversePosition);
-        tv.setText(temp);
+        tv.setText(al.get(position));
+        tv.setTextAppearance(context, android.R.style.TextAppearance_Large);
 
-
-        return listView;
+        return gridView;
+    }
+    private void setDefault(TextView tv){
+        tv.setTextColor(context.getResources().getColor(R.color.black));
+        tv.setBackgroundColor(context.getResources().getColor(R.color.white));
     }
 
     @Override
     public int getCount() {
-        return sd.date.size();
+        return al.size();
     }
 
     @Override

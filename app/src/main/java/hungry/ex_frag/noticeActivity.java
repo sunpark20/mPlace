@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.view.View;
 import android.view.Window;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import hungry.ex_frag.aStatic.StaticVari;
@@ -19,6 +20,13 @@ public class NoticeActivity extends Activity{
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.activity_notice);
         //sync >
+
+        //notice image쓸 일이 하나밖에 없어서, hardcoding함.
+        if(getIntent().getIntExtra("image", 0)==1) {
+            ImageView iv=(ImageView)findViewById(R.id.iv);
+            iv.setVisibility(View.VISIBLE);
+            iv.setImageResource(R.drawable.d4_2);
+        }
 
         //setTitle
         TextView diaTitle=(TextView)findViewById(R.id.dialogTitle);

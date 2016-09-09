@@ -10,6 +10,8 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
 import android.os.Vibrator;
+import android.text.Html;
+import android.text.method.LinkMovementMethod;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -44,6 +46,7 @@ public class Day_Activity extends ActivityHelper {
     public static ArrayList<TI> tiArray=new ArrayList<>();
     public static ArrayList<Integer> touchPage =new ArrayList<>();
     public static ArrayList<Integer> touchSound =new ArrayList<>();
+    public static ArrayList<Integer> linkText =new ArrayList<>();
     public static HashMap<Integer, Integer> alarmDrawableHM =new HashMap<>();
     public static HashMap<Integer, Integer> firstPageAniDrawableHM =new HashMap<>();
     public static HashMap<Integer, Integer> firstPageSound=new HashMap<>();
@@ -273,6 +276,13 @@ public class Day_Activity extends ActivityHelper {
         }else{
             iv.setVisibility(View.VISIBLE);
             youtubeButton.setVisibility(View.GONE);
+        }
+
+        //linkText
+        if(linkText.contains(currentPage)) {
+            tv.setMovementMethod(LinkMovementMethod.getInstance());
+            String text=tiArray.get(currentPage).text;
+            tv.setText(Html.fromHtml(text));
         }
     }
 

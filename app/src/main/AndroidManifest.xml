@@ -31,6 +31,8 @@
             android:label="@string/numPrac_mem_date"/>
         <activity android:name=".numPrac.NumPrac_mem_score_Activity" android:parentActivityName=".numPrac.NumPrac_mem_Activity"
             android:label="@string/numPrac_mem_score"/>
+        <activity android:name=".numSample.NumSample_Activity" android:parentActivityName=".MainActivity"
+            android:label="@string/day_fc_sample"/>
     </application>
 
 </manifest>

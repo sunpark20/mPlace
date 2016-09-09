@@ -31,7 +31,7 @@ public class day4_static {
                         "64 - 텔레토비에 나오는 보라돌이입니다. 머리마크는 동그라미죠.\n"+
                         "65 - 무한도전에서 박명수가 우이쒸 하고 화를 냅니다.\n"+
                         "66 - 쇼미더 머니에 나왔던 바비가 랩을 하고 있습니다.\n"+
-                        "67 - 박세리가 바지를 겆고 호수옆에 빠진 공을 쳐올립니다.\n"+
+                        "67 - 박세리가 바지를 겆고 호수옆에 빠진 골프공을 쳐올립니다.\n"+
                         "68 - 바우와우는 제가 어릴때 보던 만화의 주인공 이름입니다. 바우와우가 침을 흘리고 있습니다.\n"+
                         "69 - 배지환은 제 사촌동생 이름 입니다. 이건 아무도 못써먹겠네요..\n",
                 R.drawable.d4_3));
@@ -45,6 +45,12 @@ public class day4_static {
         Static.setBundle();
 
         Day_Activity.tiArray.add(new TI(
+                "손바닥치기하고 한 숨 쉬고 갑시다. 다음장에도 미션이 있습니다.",
+                R.drawable.d2_16));
+        Day_Activity.touchSound.add(Day_Activity.setArrayCount);
+        Static.setBundle();
+
+        Day_Activity.tiArray.add(new TI(
                 "<미션> 5분 동안 위의 숫자를 외우자.\n기억의궁전 할 줄 아시죠. 혹시 모른다면 day3부터 보고 오세요.\n기억의 궁전과 함께 외우시면 됩니다. day3에서 만들어 놓았던 방을 그대로 쓰셔도 됩니다. 기억의 궁전의 한 방에 2가지 이미지를 넣으면 오히려 더 기억을 잘 나게 해줍니다. 헷갈린다면 기억의 궁전을 하나 더 만들고 오세요!\n다 외우셨으면 다음으로 넘어가세요.",
                 R.drawable.d4_5));
         Day_Activity.alarmTimeHM.put(Day_Activity.setArrayCount, 5 * 60);
@@ -52,14 +58,10 @@ public class day4_static {
         Static.setBundle();
 
         Day_Activity.tiArray.add(new TI(
-                "잘 외우셨나요?? 저는 숫자를 인물로 변환하는데에 엄청 오래 걸렸습니다. 오늘은 여기서 그만할께요. 다음 시간에 만나요~",
+                "잘 외우셨나요?? 저는 숫자를 인물로 변환하는데에 엄청 오래 걸렸습니다. 다음 시간에 만나요~",
                 R.drawable.d4_5));
         Static.setBundle();
 
-        Day_Activity.tiArray.add(new TI(
-                "하이파이브는 잊지 않아요. ㅃㅃ",
-                R.drawable.d2_16));
-        Day_Activity.touchSound.add(Day_Activity.setArrayCount);
-        Static.setBundle();
+
     }
 }

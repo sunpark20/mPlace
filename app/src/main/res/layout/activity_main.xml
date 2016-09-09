@@ -47,8 +47,15 @@
 
     <Button
         style="@style/mainButton"
-        android:id="@+id/day6_pac"
+        android:id="@+id/peopleToNum_sample"
         android:layout_below="@+id/firstChallenge"
+        android:text="@string/day_fc_sample"
+        android:onClick="peopleToNumsampleButtonOnClicked" />
+
+    <Button
+        style="@style/mainButton"
+        android:id="@+id/day6_pac"
+        android:layout_below="@+id/peopleToNum_sample"
         android:text="@string/numPrac"
         android:onClick="day6_pacButtonOnClicked" />
 

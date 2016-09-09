@@ -5,8 +5,9 @@
     <string name="day2">\t\t\tday2- 상상하기</string>
     <string name="day3">\t\t\tday3- 장소</string>
     <string name="day4">\t\t\tday4- 숫자</string>
-    <string name="day_fc">\t\t\tday5- 첫번째 시련</string>
-    <string name="numPrac">\t\t\tday6- 숫자연습(day6준비중)</string>
+    <string name="day_fc">\t\t\tday5- 첫번째 도전</string>
+    <string name="day_fc_sample">\t\t\t인물-숫자 샘플(준비중)</string>
+    <string name="numPrac">\t\t\tday6- 숫자연습(준비중)</string>
     <string name="numPrac_mem">기록보기</string>
     <string name="numPrac_mem_date">날짜별 기록보기</string>
     <string name="numPrac_mem_score">지금까지 맞춘 숫자보기</string>
@@ -18,4 +19,6 @@
     틀림 버튼 - 해당 숫자는 세트의 맨 끝으로 이동합니다. 맞출 때 까지 나오게 됩니다.\n\n
     맞음 버튼 - 해당 숫자는 더 이상 세트에 나타나지 않습니다. 30개를 모두 맞추시면 해당 세트는 종료되고, 기록이 남습니다.\n\n
     만개를 채울때까지 해보자구요.(아무도 안할듯...)</string>
+    <string name="help2">제가 사용하는 숫자->인물 변환입니다. 해당 번호를 터치하세요.\n
+    남는 한글 모음들도 사용 할 수 있습니다. 저는 1(ㄱ,ㅋ) 3(ㄷ,ㅌ) 4(ㄹ,ㅎ) 로 사용합니다. </string>
 </resources>

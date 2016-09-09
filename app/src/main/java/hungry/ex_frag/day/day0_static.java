@@ -9,13 +9,12 @@ import hungry.ex_frag.R;
  */
 public class day0_static {
     
-    //resource 할당  길이가 너무 기니까 젤 밑에 놔두자------------------------------------------------------------
     public static void setTiArray() {
         Day_Activity.initAllArray();
 
         Day_Activity.tiArray=new ArrayList<>();
         Day_Activity.tiArray.add(new TI(
-                "기억의 궁전은 로마 시대부터 전해오는 고대의 기억술입니다.",
+                "'기억의 궁전'이라 불리는 기억법은 고대 로마 시대부터 전해오는 기억술입니다.",
                 R.drawable.d0_1));
         Static.setBundle();
 
@@ -31,7 +30,7 @@ public class day0_static {
         Static.setBundle();
 
         Day_Activity.tiArray.add(new TI(
-                "간단한 기억법부터 차근차근 배워가며 기초를 다질 것입니다.\n   ▽\n최종목표는 '기억의궁전' 기억법을 배우는 것입니다.",
+                "간단한 기억법부터 차근차근 배워가며 기초를 다질 것입니다. \n   \n목표는 '기억의 궁전' 기억법을 배우는 것입니다.",
                 R.drawable.d0_3));
         Static.setBundle();
     }
