@@ -28,6 +28,7 @@ public class Thread_notice extends AsyncTask<String, Void, String> {
 
     @Override
     protected String doInBackground(String... arg0) {
+
         String result ="";
         QueryBuilder qb = new QueryBuilder();
         String urlString=qb.buildN();

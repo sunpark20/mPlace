@@ -24,17 +24,28 @@
         android:text="@string/day2"
         android:onClick="day2ButtonOnClicked" />
 
-    <Button
-        style="@style/mainButton"
-        android:id="@+id/day3"
-        android:layout_below="@+id/day2"
-        android:text="@string/day3"
-        android:onClick="day3ButtonOnClicked" />
+    <LinearLayout
+        android:id="@+id/day3_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_below="@+id/day2">
+        <Button
+            style="@style/horizonTwo"
+            android:id="@+id/day3"
+            android:text="@string/day3"
+            android:onClick="day3ButtonOnClicked" />
+        <Button
+            style="@style/horizonTwo"
+            android:id="@+id/day3_2"
+            android:text="@string/day3_2"
+            android:onClick="day3_2ButtonOnClicked" />
+    </LinearLayout>
 
     <Button
         style="@style/mainButton"
         android:id="@+id/day4"
-        android:layout_below="@+id/day3"
+        android:layout_below="@+id/day3_container"
         android:text="@string/day4"
         android:onClick="day4ButtonOnClicked" />
     <LinearLayout
@@ -61,6 +72,13 @@
         android:layout_below="@+id/peopleToNum_container"
         android:text="@string/numPrac"
         android:onClick="day6_pacButtonOnClicked" />
+
+    <Button
+        style="@style/mainButton"
+        android:id="@+id/test"
+        android:layout_below="@+id/day6_pac"
+        android:text="@string/numPrac"
+        android:onClick="testButtonOnClicked" />
 
 
 </RelativeLayout>

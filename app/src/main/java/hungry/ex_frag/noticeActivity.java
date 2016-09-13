@@ -10,6 +10,8 @@ import android.widget.TextView;
 import hungry.ex_frag.aStatic.StaticVari;
 import hungry.ex_frag.mongo.Thread_notice;
 
+//고치기- try catch 인터넷 연결안됬을 시  개판으로 해놓음.
+
 public class NoticeActivity extends Activity{
     final String TAG="NoticeActivity";
     @Override

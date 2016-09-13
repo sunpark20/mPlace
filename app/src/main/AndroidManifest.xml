@@ -39,6 +39,9 @@
         <activity android:name=".numPrac.NumPrac_mem_score_Activity" android:parentActivityName=".numPrac.NumPrac_mem_Activity"
             android:label="@string/numPrac_mem_score"/>
 
+        <!--test-->
+        <activity android:name=".picTest.pic_Activity" android:parentActivityName=".MainActivity"/>
+
     </application>
 
 </manifest>

@@ -1,7 +1,5 @@
 package hungry.ex_frag.day;
 
-import java.util.ArrayList;
-
 import hungry.ex_frag.R;
 
 /**
@@ -14,7 +12,6 @@ public class day1_static {
     public static void setTiArray() {
         Day_Activity.initAllArray();
 
-        Day_Activity.tiArray=new ArrayList<>();
         Day_Activity.tiArray.add(new TI(
                 "안녕하세요. 오늘은 몸을 이용한 기억법을 배워볼께요.",
                 R.drawable.d2_1));
