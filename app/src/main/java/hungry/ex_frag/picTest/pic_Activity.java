@@ -28,7 +28,7 @@ import java.util.List;
 import hungry.ex_frag.ActivityHelper;
 import hungry.ex_frag.R;
 import hungry.ex_frag.aStatic.PushWakeLock;
-import hungry.ex_frag.trash.OnSwipeTouchListener;
+import hungry.ex_frag.day.OnSwipeTouchListener;
 
 /**
  * Created by soy on 2016-07-14.

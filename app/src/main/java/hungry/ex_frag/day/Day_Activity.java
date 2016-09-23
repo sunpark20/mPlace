@@ -31,7 +31,6 @@ import java.util.List;
 import hungry.ex_frag.ActivityHelper;
 import hungry.ex_frag.R;
 import hungry.ex_frag.aStatic.PushWakeLock;
-import hungry.ex_frag.trash.OnSwipeTouchListener;
 import hungry.ex_frag.youtube.DeveloperKey;
 
 /**
