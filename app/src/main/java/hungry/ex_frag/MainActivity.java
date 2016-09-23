@@ -29,8 +29,6 @@ import hungry.ex_frag.day.day_static_pao;
 import hungry.ex_frag.mongo.Thread_version;
 import hungry.ex_frag.numPrac.NumPrac_Activity;
 import hungry.ex_frag.numSample.NumSample_Activity;
-import hungry.ex_frag.picTest.PutData;
-import hungry.ex_frag.picTest.pic_Activity;
 
 public class MainActivity extends ActivityHelper {
     public static MyHandler mHandler;
@@ -157,12 +155,12 @@ public class MainActivity extends ActivityHelper {
         startActivity(intent);
     }
 
-    public void testButtonOnClicked(View view) {
+    /*public void testButtonOnClicked(View view) {
         PutData.setTiArray(getApplicationContext());
         pic_Activity.dayTitle="테스트 입니다.";
         Intent intent = new Intent(this, pic_Activity.class);
         startActivity(intent);
-    }
+    }*/
 
     int exitCount=0;
     @Override

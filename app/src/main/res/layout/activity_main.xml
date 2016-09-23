@@ -84,12 +84,12 @@
             android:onClick="day6_pacButtonOnClicked" />
     </LinearLayout>
 
-    <Button
+   <!-- <Button
         style="@style/mainButton"
         android:id="@+id/test"
         android:layout_below="@+id/pao_container"
-        android:text="@string/numPrac"
-        android:onClick="testButtonOnClicked" />
+        android:text="test"
+        android:onClick="testButtonOnClicked" />-->
 
 
 </RelativeLayout>
