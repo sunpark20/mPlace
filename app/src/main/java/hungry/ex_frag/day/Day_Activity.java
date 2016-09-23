@@ -15,6 +15,7 @@ import android.text.method.LinkMovementMethod;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.ScrollView;
 import android.widget.TextView;
@@ -60,9 +61,8 @@ public class Day_Activity extends ActivityHelper {
     Button preButton;
     Button nextButton;
     Button youtubeButton;
+    FrameLayout fl;
     ScrollView scV;
-
-
 
     //터치와 알람 관리.
     int alarmTime=0;
@@ -89,7 +89,6 @@ public class Day_Activity extends ActivityHelper {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         Log.e(LNAME, "onCreate");
-
         setContentView(R.layout.frag_day);
         setTitle(Day_Activity.dayTitle);
 
@@ -98,8 +97,11 @@ public class Day_Activity extends ActivityHelper {
         iv = (ImageView) findViewById(R.id.image);
         nextButton = (Button) findViewById(R.id.nextButton);
         preButton = (Button) findViewById(R.id.previousButton);
+        fl = (FrameLayout) findViewById(R.id.fl);
+
         //<<<start set timer
         timer = (TextView) findViewById(R.id.timer);
+        timer.bringToFront();
         //>>>end set timer
 
         //        //화면 터치에 다음으로 가기.
@@ -270,11 +272,11 @@ public class Day_Activity extends ActivityHelper {
         //youtube
         if(youtubeButton.getVisibility()==View.GONE){
             if(youtubeAL.contains(currentPage)) {
-                iv.setVisibility(View.INVISIBLE);
+                fl.setVisibility(View.GONE);
                 youtubeButton.setVisibility(View.VISIBLE);
             }
         }else{
-            iv.setVisibility(View.VISIBLE);
+            fl.setVisibility(View.VISIBLE);
             youtubeButton.setVisibility(View.GONE);
         }
 

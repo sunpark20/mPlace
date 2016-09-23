@@ -25,6 +25,7 @@ import hungry.ex_frag.day.day3_static;
 import hungry.ex_frag.day.day3_static_2;
 import hungry.ex_frag.day.day4_static;
 import hungry.ex_frag.day.day_statc_fc;
+import hungry.ex_frag.day.day_static_pao;
 import hungry.ex_frag.mongo.Thread_version;
 import hungry.ex_frag.numPrac.NumPrac_Activity;
 import hungry.ex_frag.numSample.NumSample_Activity;
@@ -38,6 +39,8 @@ public class MainActivity extends ActivityHelper {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+
         mContext= this;
 
         mHandler= new MyHandler(this);
@@ -137,6 +140,14 @@ public class MainActivity extends ActivityHelper {
     public void firstChallengeButtonOnClicked(View view) {
         day_statc_fc.setTiArray();
         Day_Activity.dayTitle=getString(R.string.day_fc);
+        Intent intent = new Intent(this, Day_Activity.class);
+        startActivity(intent);
+    }
+
+    //day6 숫자2
+    public void day_paoButtonOnClicked(View view) {
+        day_static_pao.setTiArray();
+        Day_Activity.dayTitle=getString(R.string.day_pao);
         Intent intent = new Intent(this, Day_Activity.class);
         startActivity(intent);
     }

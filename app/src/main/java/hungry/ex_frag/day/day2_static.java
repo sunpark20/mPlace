@@ -14,7 +14,8 @@ public class day2_static {
         Day_Activity.initAllArray();
 
         Day_Activity.tiArray.add(new TI(
-                "두뇌는 숫자보다 이미지를 쉽게 기억합니다.\n   ▽\n오늘은 이미지를 활용해보겠습니다.",
+                "기억술의 핵심은 뇌가 잘 기억하지 못하는 것을 기억하기 쉬운 것으로 바꾸는 것입니다.\n   ▽\n" +
+                        "오늘은 숫자를 이미지로 바꿔 보는 방법을 알아봅시다.",
                 R.drawable.d1_2));
         Static.setBundle();
 

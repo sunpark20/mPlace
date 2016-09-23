@@ -66,17 +66,28 @@
             android:text="@string/day_fc_sample"
             android:onClick="peopleToNumsampleButtonOnClicked" />
     </LinearLayout>
-    <Button
-        style="@style/mainButton"
-        android:id="@+id/day6_pac"
-        android:layout_below="@+id/peopleToNum_container"
-        android:text="@string/numPrac"
-        android:onClick="day6_pacButtonOnClicked" />
+    <LinearLayout
+        android:id="@+id/pao_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_below="@+id/peopleToNum_container">
+        <Button
+            style="@style/horizonTwo"
+            android:id="@+id/day_pao"
+            android:text="@string/day_pao"
+            android:onClick="day_paoButtonOnClicked" />
+        <Button
+            style="@style/horizonTwo"
+            android:id="@+id/day6_pac"
+            android:text="@string/numPrac"
+            android:onClick="day6_pacButtonOnClicked" />
+    </LinearLayout>
 
     <Button
         style="@style/mainButton"
         android:id="@+id/test"
-        android:layout_below="@+id/day6_pac"
+        android:layout_below="@+id/pao_container"
         android:text="@string/numPrac"
         android:onClick="testButtonOnClicked" />
 
