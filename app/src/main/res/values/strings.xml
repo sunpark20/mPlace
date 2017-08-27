@@ -1,12 +1,12 @@
 <resources>
     <string name="app_name">기억의궁전</string>
     <string name="intro">머리말</string>
-    <string name="day1">\t\t\tday1- 몸</string>
-    <string name="day2">\t\t\tday2- 상상하기</string>
-    <string name="day3">\t\tday3-장소</string>
+    <string name="day1">day1- 몸</string>
+    <string name="day2">day2- 상상하기</string>
+    <string name="day3">day3-장소</string>
     <string name="day3_2">궁전만들기Tip</string>
-    <string name="day4">\t\t\tday4- 숫자</string>
-    <string name="day_fc">day5- 첫번째 도전</string>
+    <string name="day4">day4- 숫자</string>
+    <string name="day_fc">day5- 질문</string>
     <string name="day_fc_sample">인물-숫자 샘플</string>
     <string name="day_pao">day6-숫자2</string>
     <string name="numPrac">pao연습</string>

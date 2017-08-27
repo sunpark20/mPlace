@@ -18,14 +18,14 @@ import java.lang.ref.WeakReference;
 import hungry.ex_frag.aStatic.StaticMethod;
 import hungry.ex_frag.aStatic.StaticVari;
 import hungry.ex_frag.day.Day_Activity;
-import hungry.ex_frag.day.day0_static;
-import hungry.ex_frag.day.day1_static;
-import hungry.ex_frag.day.day2_static;
-import hungry.ex_frag.day.day3_static;
-import hungry.ex_frag.day.day3_static_2;
-import hungry.ex_frag.day.day4_static;
-import hungry.ex_frag.day.day_statc_fc;
-import hungry.ex_frag.day.day_static_pao;
+import hungry.ex_frag.day.day0;
+import hungry.ex_frag.day.day1;
+import hungry.ex_frag.day.day2;
+import hungry.ex_frag.day.day3;
+import hungry.ex_frag.day.day3_2;
+import hungry.ex_frag.day.day4;
+import hungry.ex_frag.day.day5_fc;
+import hungry.ex_frag.day.day6_pao;
 import hungry.ex_frag.mongo.Thread_version;
 import hungry.ex_frag.numPrac.NumPrac_Activity;
 import hungry.ex_frag.numSample.NumSample_Activity;
@@ -37,7 +37,6 @@ public class MainActivity extends ActivityHelper {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
 
         mContext= this;
 
@@ -58,8 +57,8 @@ public class MainActivity extends ActivityHelper {
 
         private final WeakReference<MainActivity> mActivity;
 
-        public MyHandler(MainActivity activity) {
-            mActivity = new WeakReference<MainActivity>(activity);
+        private MyHandler(MainActivity activity) {
+            mActivity = new WeakReference(activity);
         }
 
         @Override
@@ -90,41 +89,41 @@ public class MainActivity extends ActivityHelper {
     }
 
     public void day0ButtonOnClicked(View view) {
-        day0_static.setTiArray();
+        day0.setTiArray();
         Day_Activity.dayTitle=getString(R.string.intro);
         Intent intent = new Intent(this, Day_Activity.class);
         startActivity(intent);
     }
 
     public void day1ButtonOnClicked(View view) {
-        day1_static.setTiArray();
+        day1.setTiArray();
         Day_Activity.dayTitle=getString(R.string.day1);
         Intent intent = new Intent(this, Day_Activity.class);
         startActivity(intent);
     }
 
     public void day2ButtonOnClicked(View view) {
-        day2_static.setTiArray();
+        day2.setTiArray();
         Day_Activity.dayTitle=getString(R.string.day2);
         Intent intent = new Intent(this, Day_Activity.class);
         startActivity(intent);
     }
 
     public void day3ButtonOnClicked(View view) {
-        day3_static.setTiArray();
+        day3.setTiArray();
         Day_Activity.dayTitle=getString(R.string.day3);
         Intent intent = new Intent(this, Day_Activity.class);
         startActivity(intent);
     }
     public void day3_2ButtonOnClicked(View view) {
-        day3_static_2.setTiArray();
+        day3_2.setTiArray();
         Day_Activity.dayTitle=getString(R.string.day3_2);
         Intent intent = new Intent(this, Day_Activity.class);
         startActivity(intent);
     }
 
     public void day4ButtonOnClicked(View view) {
-        day4_static.setTiArray();
+        day4.setTiArray();
         Day_Activity.dayTitle=getString(R.string.day4);
         Intent intent = new Intent(this, Day_Activity.class);
         startActivity(intent);
@@ -136,7 +135,7 @@ public class MainActivity extends ActivityHelper {
     }
 
     public void firstChallengeButtonOnClicked(View view) {
-        day_statc_fc.setTiArray();
+        day5_fc.setTiArray();
         Day_Activity.dayTitle=getString(R.string.day_fc);
         Intent intent = new Intent(this, Day_Activity.class);
         startActivity(intent);
@@ -144,7 +143,7 @@ public class MainActivity extends ActivityHelper {
 
     //day6 숫자2
     public void day_paoButtonOnClicked(View view) {
-        day_static_pao.setTiArray();
+        day6_pao.setTiArray();
         Day_Activity.dayTitle=getString(R.string.day_pao);
         Intent intent = new Intent(this, Day_Activity.class);
         startActivity(intent);

@@ -100,9 +100,10 @@ public class Day_Activity extends ActivityHelper {
 
         //<<<start set timer
         timer = (TextView) findViewById(R.id.timer);
-        timer.bringToFront();
+        //null 익셉션이라는데
+        //timer.bringToFront();
         //>>>end set timer
-
+        
         //        //화면 터치에 다음으로 가기.
 //        iv.setOnClickListener(new View.OnClickListener() {
 //            @Override
@@ -159,7 +160,7 @@ public class Day_Activity extends ActivityHelper {
 
 
         //youtube
-        youtubeButton= (Button) findViewById(R.id.youtubeButton);;
+        youtubeButton= (Button) findViewById(R.id.youtubeButton);
 
         setTiArray();
 
