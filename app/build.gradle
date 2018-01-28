@@ -2,14 +2,14 @@ apply plugin: 'com.android.application'
 
 android {
     compileSdkVersion 23
-    buildToolsVersion "24.0.0"
+    buildToolsVersion '25.0.0'
 
     defaultConfig {
         applicationId "hungry.ex_frag"
         minSdkVersion 16
         targetSdkVersion 23
-        versionCode 12
-        versionName "1.20"
+        versionCode 14
+        versionName "1.22"
     }
     buildTypes {
         release {
