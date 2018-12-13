@@ -7,6 +7,9 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.GridView;
 
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
@@ -24,10 +27,19 @@ import hungry.ex_frag.mongo.Thread_notice;
  */
 public class NumSample_Activity extends ActivityHelper {
     static ArrayList<Item> sampleAl=new ArrayList<>();
+
+    //애드몹
+    public AdView mAdView;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_numsample);
+
+        //애드몹
+        mAdView = (AdView)findViewById(R.id.adView111);
+        AdRequest adRequest = new AdRequest.Builder().build();
+        mAdView.loadAd(adRequest);
 
         GridView gridview = (GridView) findViewById(R.id.gridView);
         gridview.setAdapter(new GridViewAdapter(this, makeSet()));

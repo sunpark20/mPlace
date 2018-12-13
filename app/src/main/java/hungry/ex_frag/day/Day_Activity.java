@@ -21,6 +21,8 @@ import android.widget.ScrollView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
 import com.google.android.youtube.player.YouTubeInitializationResult;
 import com.google.android.youtube.player.YouTubeStandalonePlayer;
 
@@ -84,12 +86,20 @@ public class Day_Activity extends ActivityHelper {
     private static final int REQ_START_STANDALONE_PLAYER = 1;
     private static final int REQ_RESOLVE_SERVICE_MISSING = 2;
 
+    //애드몹
+    public AdView mAdView;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         Log.e(LNAME, "onCreate");
         setContentView(R.layout.frag_day);
         setTitle(Day_Activity.dayTitle);
+
+        //애드몹
+        mAdView = (AdView)findViewById(R.id.adView111);
+        AdRequest adRequest = new AdRequest.Builder().build();
+        mAdView.loadAd(adRequest);
 
         tv = (TextView) findViewById(R.id.tvFragDay1_1);
         pageNum = (TextView) findViewById(R.id.pageNum);

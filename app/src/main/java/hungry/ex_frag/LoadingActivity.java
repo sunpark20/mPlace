@@ -8,6 +8,7 @@ import android.os.Message;
 import java.lang.ref.WeakReference;
 
 import hungry.ex_frag.mongo.Thread_notice;
+import com.google.android.gms.ads.MobileAds;
 
 public class LoadingActivity extends ActivityHelper{
     public static MyHandler mHandler;
@@ -18,6 +19,11 @@ public class LoadingActivity extends ActivityHelper{
         setContentView(R.layout.activity_loading);
         getSupportActionBar().hide();
         mHandler= new MyHandler(this);
+
+        //애드몹
+        String myCode = getString(R.string.addmop_code);
+        MobileAds.initialize(this, myCode);
+
 
         //https://api.mlab.com/api/1/databases/my-db/collections/my-coll?apiKey=myAPIKey
         //https://api.mlab.com/api/1/databases/my-db/collections/my-coll?q={"active": true}&apiKey=myAPIKey

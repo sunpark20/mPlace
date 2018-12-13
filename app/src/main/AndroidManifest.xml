@@ -43,6 +43,11 @@
         <!--test-->
         <activity android:name=".picTest.pic_Activity" android:parentActivityName=".MainActivity"/>
 
+        //에드몹
+        <meta-data
+            android:name="com.google.android.gms.ads.APPLICATION_ID"
+            android:value="ca-app-pub-9335622001765471/4524660727"/>
+
     </application>
 
 </manifest>

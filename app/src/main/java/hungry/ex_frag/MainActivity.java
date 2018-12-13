@@ -13,6 +13,8 @@ import android.support.v4.app.ActivityCompat;
 import android.util.Log;
 import android.view.View;
 
+import com.google.android.gms.ads.AdRequest;
+
 import java.lang.ref.WeakReference;
 
 import hungry.ex_frag.aStatic.StaticMethod;
@@ -29,17 +31,26 @@ import hungry.ex_frag.day.day6_pao;
 import hungry.ex_frag.mongo.Thread_version;
 import hungry.ex_frag.numPrac.NumPrac_Activity;
 import hungry.ex_frag.numSample.NumSample_Activity;
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
 
 public class MainActivity extends ActivityHelper {
     public static MyHandler mHandler;
     static  Context mContext;
+    //애드몹
+    public AdView mAdView;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        mContext= this;
+        //애드몹
+        mAdView = (AdView)findViewById(R.id.adView111);
+        AdRequest adRequest = new AdRequest.Builder().build();
+        mAdView.loadAd(adRequest);
 
+        mContext= this;
         mHandler= new MyHandler(this);
         new Thread_version(this).execute();
 
@@ -50,6 +61,7 @@ public class MainActivity extends ActivityHelper {
             Intent intent = new Intent(this, NoticeActivity.class);
             startActivity(intent);
         }
+
 
     }
 

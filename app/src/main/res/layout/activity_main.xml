@@ -84,6 +84,16 @@
             android:onClick="day6_pacButtonOnClicked" />
     </LinearLayout>
 
+    <com.google.android.gms.ads.AdView
+        xmlns:ads="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/adView111"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"
+        ads:adSize="BANNER"
+        ads:adUnitId="@string/addmop_code">
+    </com.google.android.gms.ads.AdView>
    <!-- <Button
         style="@style/mainButton"
         android:id="@+id/test"

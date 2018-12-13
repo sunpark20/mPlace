@@ -6,6 +6,9 @@ import android.view.View;
 import android.widget.Chronometer;
 import android.widget.TextView;
 
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
+
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -37,6 +40,9 @@ public class NumPrac_Activity extends ActivityHelper {
 
     boolean end=false;
 
+    //애드몹
+    public AdView mAdView;
+
     @Override
     protected void onSaveInstanceState(Bundle outState) {
         outState.putCharSequence("cm", cm.getText());
@@ -47,6 +53,11 @@ public class NumPrac_Activity extends ActivityHelper {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_numprac);
+
+        //애드몹
+        mAdView = (AdView)findViewById(R.id.adView111);
+        AdRequest adRequest = new AdRequest.Builder().build();
+        mAdView.loadAd(adRequest);
 
         cm=(Chronometer)findViewById(R.id.cm);
         cm.start();

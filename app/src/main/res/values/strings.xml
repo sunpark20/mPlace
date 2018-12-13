@@ -14,6 +14,10 @@
     <string name="numPrac_mem_date">날짜별 기록보기</string>
     <string name="numPrac_mem_score">지금까지 맞춘 숫자보기</string>
 
+    <!--<string name="addmop_code">ca-app-pub-3940256099942544/6300978111</string>-->
+    <string name="addmop_code">ca-app-pub-9335622001765471/4524660727</string>
+
+
     <!--notice-->
     <string name="help">기억의 궁전으로 00~99 인물-숫자 변환을 외운 후에 연습하세요.\n
         4자리 숫자를 인물 행동으로 변환하는 연습입니다.\n\n
